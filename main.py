@@ -10,6 +10,7 @@ lcd = Lcd()
 csvPersistance = CsvPersistance()
 webSocket = WebSocket()
 
+print("trying to communicate")
 webSocket.send('ello?')
 
 while False:
