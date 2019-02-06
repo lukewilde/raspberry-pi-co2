@@ -1,0 +1,3 @@
+.vscode
+**/*.pyc
+local-datastore.txt
