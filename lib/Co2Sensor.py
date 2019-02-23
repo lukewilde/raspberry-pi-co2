@@ -2,6 +2,7 @@ import serial
 
 class Co2Sensor:
   def __init__(self):
+    print("Init Co2 sensor...")
     self.serialInterface = serial.Serial("/dev/ttyS0", baudrate = 9600, timeout = 0.5)
     self.serialInterface.flushInput()
 
