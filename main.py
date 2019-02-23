@@ -5,12 +5,15 @@ from lib.CsvPersistance import CsvPersistance
 from lib.WebSocket import WebSocket
 import time
 
+
 # TODO: As do these instantiations.
 
 co2Sensor = Co2Sensor()
 lcd = Lcd()
 csvPersistance = CsvPersistance()
 webSocket = WebSocket()
+
+readingInterval = 1
 
 while True:
   co2Ppm = co2Sensor.getReading()
@@ -23,4 +26,4 @@ while True:
   csvPersistance.append(timestamp, co2Reading)
   webSocket.send({'date': timestamp, 'co2': co2Reading})
 
-  time.sleep(10)
+  time.sleep(readingInterval)
